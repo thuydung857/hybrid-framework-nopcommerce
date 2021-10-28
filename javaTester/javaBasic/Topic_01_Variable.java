@@ -30,7 +30,7 @@ public class Topic_01_Variable {
 		Topic_01_Variable topic1 = new Topic_01_Variable();
 		
 		// Phải new mới lên mới xài đc biến global
-		System.out.println(topic1.browserName);
+		System.out.println(Topic_01_Variable.browserName);
 		
 	}
 
