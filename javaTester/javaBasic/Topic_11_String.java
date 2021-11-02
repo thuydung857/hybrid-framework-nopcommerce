@@ -18,7 +18,6 @@ public class Topic_11_String {
 		System.out.println(count);
 	}
 
-	
 	public void TC_02_Many_Cases() {
 		char pageTitleArr[] = pageTitle.toCharArray();
 		int count = 0;
