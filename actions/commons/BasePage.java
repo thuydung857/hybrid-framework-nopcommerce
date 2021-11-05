@@ -17,9 +17,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	WebDriver driver;
-	Alert alert;
-	WebDriverWait explicitWait;
-
+	
+	public static BasePage getBasePageObject() {
+		return new BasePage();
+	}
+	
 	public void openPageURL(WebDriver driver, String pageURL) {
 		driver.get(pageURL);
 
@@ -114,7 +116,7 @@ public class BasePage {
 		}
 	}
 
-	public By getByXpath(String xpathLocator) {
+	private By getByXpath(String xpathLocator) {
 		return By.xpath(xpathLocator);
 
 	}
@@ -123,7 +125,7 @@ public class BasePage {
 		return driver.findElement(getByXpath(xpathLocator));
 	}
 
-	public List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
+	private List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 
@@ -143,7 +145,7 @@ public class BasePage {
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
 		Select select = new Select(getWebElement(driver, xpathLocator));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String xpathLocator) {
@@ -161,7 +163,7 @@ public class BasePage {
 		getWebElement(driver, parentLocator).click();
 		sleepInSecond(1);
 
-		explicitWait = new WebDriverWait(driver, LongTimeout);
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		List<WebElement> allItems = explicitWait
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(childItemLocator)));
 
@@ -176,23 +178,23 @@ public class BasePage {
 		}
 	}
 
-	public void getElementAttribute(WebDriver driver, String xpathLocator, String attributeValue) {
-		getWebElement(driver, xpathLocator).getAttribute(attributeValue);
+	public String getElementAttribute(WebDriver driver, String xpathLocator, String attributeValue) {
+		return getWebElement(driver, xpathLocator).getAttribute(attributeValue);
 	}
 
-	public void getElementText(WebDriver driver, String xpathLocator, String textValue) {
-		getWebElement(driver, xpathLocator).getAttribute(textValue);
+	public String getElementText(WebDriver driver, String xpathLocator) {
+		return getWebElement(driver, xpathLocator).getText();
 	}
 
-	public void getElementCSS(WebDriver driver, String xpathLocator, String rgbaValue) {
-		Color.fromString(rgbaValue).asHex();
+	public void getElementCSS(WebDriver driver, String xpathLocator) {
+		Color.fromString(xpathLocator).asHex();
 	}
 
 	public String getHeraColorFromRGBA(WebDriver driver, String xpathLocator, String cssValue) {
 		return getWebElement(driver, xpathLocator).getCssValue(cssValue);
 	}
 
-	public int getElementSize(WebDriver driver, String xpathLocator, String cssValue) {
+	public int getElementSize(WebDriver driver, String xpathLocator) {
 		return getListWebElement(driver, xpathLocator).size();
 	}
 
@@ -267,7 +269,7 @@ public class BasePage {
 	}
 
 	public boolean isJQueryAndPageLoadedSuccess(WebDriver driver) {
-		explicitWait = new WebDriverWait(driver, LongTimeout);
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 		ExpectedCondition<Boolean> jsQueryLoad = new ExpectedCondition<Boolean>() {
