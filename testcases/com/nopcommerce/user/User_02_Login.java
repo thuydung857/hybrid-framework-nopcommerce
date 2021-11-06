@@ -95,28 +95,6 @@ public class User_02_Login extends BasePage {
 
 	@Test
 	public void TC_06_Valid_Email_Correct_Password() {
-//		//Precondition: Login success
-//		waitForElementClickable(driver, "//a[@class='ico-register']");
-//		clickToElement(driver, "//a[@class='ico-register']");
-//		
-//		checkToDefaultCheckboxRadio(driver, "//input[@id='gender-female']");
-//		sendkeyToElement(driver, "//input[@id='FirstName']", "Dung");
-//		sendkeyToElement(driver, "//input[@id='LastName']", "Nguyen");
-//		selectItemInDefaultDropdown(driver, "//select[@name='DateOfBirthDay']", "23");
-//		selectItemInDefaultDropdown(driver, "//select[@name='DateOfBirthMonth']", "10");
-//		selectItemInDefaultDropdown(driver, "//select[@name='DateOfBirthYear']", "2000");
-//		sendkeyToElement(driver, "//input[@id='Email']", User_01_Register.EMAIL_ADDRESS);
-//		sendkeyToElement(driver, "//input[@id='Company']", "Automation FC");
-//		sendkeyToElement(driver, "//input[@id='Password']", "123456");
-//		sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
-//
-//		waitForElementClickable(driver, "//button[@id='register-button']");
-//		clickToElement(driver, "//button[@id='register-button']");
-//		
-		//Testcase
-//		waitForElementClickable(driver, "//a[@class='ico-login']");
-//		clickToElementByJS(driver, "//a[@class='ico-login']");		
-		
 		sendkeyToElement(driver, "//input[@id='Email']", User_01_Register.EMAIL_ADDRESS);
 		sendkeyToElement(driver, "//input[@id='Password']", "123456");
 

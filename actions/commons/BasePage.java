@@ -259,7 +259,7 @@ public class BasePage {
 
 	public void scrollToElement(WebDriver driver, String xpathLocator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, xpathLocator));
+		jsExecutor.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, xpathLocator));
 	}
 
 	public void removeAttributeInDOM(WebDriver driver, String xpathLocator, String attributeRemove) {

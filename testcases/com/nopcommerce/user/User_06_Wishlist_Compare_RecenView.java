@@ -31,16 +31,17 @@ public class User_06_Wishlist_Compare_RecenView extends BasePage {
 		driver.get("https://demo.nopcommerce.com/");
 	}
 
-	public void TC_00_Valid_Email_Correct_Password() {
-		// Precondition: Login success
+	public void TC_00_Login() {
 		waitForElementClickable(driver, "//a[@class='ico-login']");
-		clickToElementByJS(driver, "//a[@class='ico-login']");
+		clickToElement(driver, "//a[@class='ico-login']");
 
-		sendkeyToElement(driver, "//input[@id='Email']", "dungnguyen56347@gmail.net");
-		sendkeyToElement(driver, "//input[@id='Password']", "123456");
+		sendkeyToElement(driver, "//input[@id='Email']", User_03_My_Account.NEW_MAIL);
+		sendkeyToElement(driver, "//input[@id='Password']", User_03_My_Account.NEW_PASSWORD);
 
 		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
 		clickToElement(driver, "//button[@class='button-1 login-button']");
+
+		Assert.assertTrue(isElementDisplayed(driver, "//a[@class='ico-account']"));
 	}
 
 	@Test

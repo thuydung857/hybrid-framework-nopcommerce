@@ -32,16 +32,18 @@ public class User_04_Search extends BasePage {
 	}
 
 	@Test
-	public void TC_00_Valid_Email_Correct_Password() {
-		// Precondition: Login success
+	public void TC_00_Login() {
 		waitForElementClickable(driver, "//a[@class='ico-login']");
-		clickToElementByJS(driver, "//a[@class='ico-login']");
+		clickToElement(driver, "//a[@class='ico-login']");
 
-		sendkeyToElement(driver, "//input[@id='Email']", "myduyen51324@gmail.com");
-		sendkeyToElement(driver, "//input[@id='Password']", "654321");
+		sendkeyToElement(driver, "//input[@id='Email']", User_03_My_Account.NEW_MAIL);
+		sendkeyToElement(driver, "//input[@id='Password']", User_03_My_Account.NEW_PASSWORD);
 
 		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
 		clickToElement(driver, "//button[@class='button-1 login-button']");
+
+		Assert.assertTrue(isElementDisplayed(driver, "//a[@class='ico-account']"));
+
 	}
 
 	@Test

@@ -28,8 +28,6 @@ public class User_01_Register extends BasePage { // Thua ke
 		driver = new ChromeDriver();
 		action = new Actions(driver);
 
-		EMAIL_ADDRESS = "NopCom" + getRandomNumber() + "@mail.net";
-
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
