@@ -20,6 +20,7 @@ public class RegisterPageObject extends BasePage {
 	public String getErrorMessageFirstNameTextBox() {
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
+
 	}
 
 	public String getErrorMessageLastNameTextBox() {
@@ -50,6 +51,7 @@ public class RegisterPageObject extends BasePage {
 	public void inputToLastNameTextBox(String lastName) {
 		waitForElementClickable(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
+
 	}
 
 	public void inputToPasswordTextBox(String password) {
@@ -70,6 +72,7 @@ public class RegisterPageObject extends BasePage {
 	public String getRegisterSuccessfulMessage() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
 		return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
+
 	}
 
 	public void clickToLogoutLink() {

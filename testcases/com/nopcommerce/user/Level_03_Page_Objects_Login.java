@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_03_Page_Objects_Pattern {
+public class Level_03_Page_Objects_Login {
 
 	private WebDriver driver;
 	Select select;
@@ -86,7 +86,7 @@ public class Level_03_Page_Objects_Pattern {
 		System.out.println("Register_03_Valid_Info - Step 2: Input to required fields");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(emailAddress);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Login.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -110,7 +110,7 @@ public class Level_03_Page_Objects_Pattern {
 		System.out.println("Register_04_Existing_Email - Step 3: Input existing email");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(emailAddress);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Login.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -131,7 +131,7 @@ public class Level_03_Page_Objects_Pattern {
 		System.out.println("Register_05_Password_Less_Than_6_Chars - Step 2: Input password less than 6 characters");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(emailAddress);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Login.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox("123");
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -150,7 +150,7 @@ public class Level_03_Page_Objects_Pattern {
 		System.out.println("Register Page - Step 2: Input password diff confirm password");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(emailAddress);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Login.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(emailAddress);

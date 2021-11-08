@@ -5,7 +5,8 @@
 
 		<classes>
 			<class
-				name="com.nopcommerce.user.Level_03_Page_Objects_Pattern" />
+				name="com.nopcommerce.user.Level_03_Page_Objects_Login" />
+				name="com.nopcommerce.user.Level_03_Page_Objects_Register" />
 
 		</classes>
 
