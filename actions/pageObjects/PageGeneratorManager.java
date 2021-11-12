@@ -18,14 +18,19 @@ public class PageGeneratorManager { // Dung để tối ưu việc khởi tạo 
 		return new RegisterPageObject(driver);
 
 	}
-	
+
 	public static SearchPageObject getSearchPage(WebDriver driver) {
 		return new SearchPageObject(driver);
 
 	}
-	
-	public static NewsPageObject getOrderPage(WebDriver driver) {
-		return new NewsPageObject(driver);
+
+	public static OrderPageObject getOrderPage(WebDriver driver) {
+		return new OrderPageObject(driver);
+
+	}
+
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
+		return new MyAccountPageObject(driver);
 
 	}
 

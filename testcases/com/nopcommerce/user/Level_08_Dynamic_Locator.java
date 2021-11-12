@@ -13,13 +13,14 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import pageObjects.HomePageObject;
+import pageObjects.MyAccountPageObject;
 import pageObjects.OrderPageObject;
 import pageObjects.PageGeneratorManager;
 import pageObjects.RegisterPageObject;
 import pageObjects.SearchPageObject;
 
-// Switch page = ham GET o trong BasePage (10 page = 10 ham)
-public class Level_07_Switch_Page extends BaseTest {
+//Switch page = ham GET o trong BasePage (1 ham, 1 localtor, nhung de xai thi 2 dong - TC2)
+public class Level_08_Dynamic_Locator extends BaseTest {
 
 	private WebDriver driver;
 	Select select;
@@ -29,6 +30,8 @@ public class Level_07_Switch_Page extends BaseTest {
 	private OrderPageObject orderPage;
 	private SearchPageObject searchPage;
 	private RegisterPageObject registerPage;
+	private MyAccountPageObject myAccountPage;
+
 	String projectPath = System.getProperty("user.dir");
 	static String EMAIL_ADDRESS = "NopCom" + getRandomNumber() + "@mail.net";
 
@@ -39,7 +42,10 @@ public class Level_07_Switch_Page extends BaseTest {
 		action = new Actions(driver);
 		driver.get("https://demo.nopcommerce.com/");
 		homePage = PageGeneratorManager.getHomePage(driver);
+		orderPage = PageGeneratorManager.getOrderPage(driver);
+		searchPage = PageGeneratorManager.getSearchPage(driver);
 		registerPage = PageGeneratorManager.getRegisterPage(driver);
+		myAccountPage = PageGeneratorManager.getMyAccountPage(driver);
 
 		emailAddress = "auto" + getRandomNumber() + "@gmail.net";
 		firstName = "Dung";
@@ -66,12 +72,16 @@ public class Level_07_Switch_Page extends BaseTest {
 	}
 
 	@Test
-	public void Switch_Page() {
-		orderPage = homePage.getNewsPage(driver);
+	public void Switch_Page_Using_Dynamic_Locator() {
+		myAccountPage.getfooterPageByName(driver, "Search");
+		searchPage = PageGeneratorManager.getSearchPage(driver);
 
-		searchPage = orderPage.getSearchPage(driver);
+		searchPage.getfooterPageByName(driver, "Orders");
+		orderPage = PageGeneratorManager.getOrderPage(driver);
 
-		orderPage = searchPage.getNewsPage(driver);
+		orderPage.getfooterPageByName(driver, "My account");
+		myAccountPage = PageGeneratorManager.getMyAccountPage(driver);
+
 	}
 
 	@AfterClass

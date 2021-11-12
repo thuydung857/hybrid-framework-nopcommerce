@@ -1,114 +1,157 @@
 package com.nopcommerce.user;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.BasePage;
+import commons.BaseTest;
+import pageObjects.HomePageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.PageGeneratorManager;
 
-public class User_02_Login extends BasePage {
-	WebDriver driver;
-	String emailAddress;
+public class User_02_Login extends BaseTest {
+
+	private WebDriver driver;
 	Select select;
 	Actions action;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
+	String emailAddress, wrongEmail, invalidEmail, password;
 	String projectPath = System.getProperty("user.dir");
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeClass(String browserName) {
+		driver = openMultiBrowsers(browserName);
 		action = new Actions(driver);
-
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
-	}
+		homePage = PageGeneratorManager.getHomePage(driver);
+		loginPage = PageGeneratorManager.getLoginPage(driver);
 
-	@Test
-	public void TC_01_Empty_Data() {
-		waitForElementClickable(driver, "//a[@class='ico-login']");
-		clickToElementByJS(driver, "//a[@class='ico-login']");
-
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
-
-		Assert.assertEquals(getElementText(driver, "//span[@class='field-validation-error']"),
-				"Please enter your email");
+		emailAddress = "auto" + getRandomNumber() + "@gmail.net";
+		wrongEmail = "abc";
+		password = "123456";
+		invalidEmail = "abc@gmail.com";
 
 	}
 
 	@Test
-	public void TC_02_Wrong_Email() {
-		sendkeyToElement(driver, "//input[@id='Email']", "abc");
+	public void Login_01_Empty_Data() {
+		System.out.println("Login_01_Empty_Data - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
 
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
+		System.out.println("Login_01_Empty_Data - Step 2: Click to Login Button");
+		loginPage.clickToLoginButton();
 
-		Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Wrong email");
+		System.out.println("Login_01_Empty_Data - Step 3: Verify email message displayed");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email");
 
 	}
 
 	@Test
-	public void TC_03_Login_Email_Not_Register() {
-		sendkeyToElement(driver, "//input[@id='Email']", "abc@gmail.com");
-		sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	public void Login_02_Wrong_Email() {
+		System.out.println("Login_02_Wrong_Email - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
 
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
+		System.out.println("Login_02_Wrong_Email - Step 2: Input Wrong Email");
+		loginPage.inputToEmailTextBox(wrongEmail);
+		loginPage.inputToPasswordTextBox(password);
 
-		Assert.assertEquals(getElementText(driver, "//div[@class='message-error validation-summary-errors']"),
+		System.out.println("Login_02_Wrong_Email - Step 3: Click Login Button");
+		loginPage.clickToLoginButton();
+
+		System.out.println("Login_02_Wrong_Email - Step 4: Verify email error message displayed");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email");
+
+	}
+
+	@Test
+	public void Login_03_Login_Email_Not_Register() {
+		System.out.println("Login_03_Login_Email_Not_Register - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
+
+		System.out.println("Login_03_Login_Email_Not_Register - Step 2: Input invalid email");
+		loginPage.inputToEmailTextBox(invalidEmail);
+		loginPage.inputToPasswordTextBox(password);
+
+		System.out.println("Login_03_Login_Email_Not_Register - Step 3: Click Login Button");
+		loginPage.clickToLoginButton();
+
+		System.out.println(
+				"Login_03_Login_Email_Not_Register - Step 4: Verify login unsuccesful email message displayed");
+		Assert.assertEquals(loginPage.getLoginUnsuccessfulMessage(),
 				"Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
-	}
-
-	@Test
-	public void TC_04_Valid_Email_Empty_Password() {
-		sendkeyToElement(driver, "//input[@id='Email']", User_01_Register.EMAIL_ADDRESS);
-
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
-
-		Assert.assertEquals(getElementText(driver, "//div[@class='message-error validation-summary-errors']"),
-				"Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 
 	}
 
 	@Test
-	public void TC_05_Valid_Email_Incorrect_Password() {
-		sendkeyToElement(driver, "//input[@id='Email']", User_01_Register.EMAIL_ADDRESS);
-		sendkeyToElement(driver, "//input[@id='Password']", "abc");
+	public void Login_04_Valid_Email_Empty_Password() {
+		System.out.println("Login_04_Valid_Email_Empty_Password - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
 
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
+		System.out.println("Login_04_Valid_Email_Empty_Password - Step 2: Input valid email/empty password");
+		loginPage.inputToEmailTextBox(emailAddress);
+		loginPage.inputToPasswordTextBox("");
 
-		Assert.assertEquals(getElementText(driver, "//div[@class='message-error validation-summary-errors']"),
-				"Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
+		System.out.println("Login_04_Valid_Email_Empty_Password - Step 3: Click Login Button");
+		loginPage.clickToLoginButton();
+
+		System.out.println(
+				"Login_04_Valid_Email_Empty_Password - Step 4: Verify login unsuccesful email message displayed");
+		Assert.assertEquals(loginPage.getLoginUnsuccessfulMessage(),
+				"Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
 
 	}
 
 	@Test
-	public void TC_06_Valid_Email_Correct_Password() {
-		sendkeyToElement(driver, "//input[@id='Email']", User_01_Register.EMAIL_ADDRESS);
-		sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	public void Login_05_Valid_Email_Incorrect_Password() {
+		System.out.println("Login_05_Valid_Email_Incorrect_Password - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
 
-		waitForElementClickable(driver, "//button[@class='button-1 login-button']");
-		clickToElement(driver, "//button[@class='button-1 login-button']");
+		System.out.println("Login_05_Valid_Email_Incorrect_Password - Step 2: Input valid email/empty password");
+		loginPage.inputToEmailTextBox(emailAddress);
+		loginPage.inputToPasswordTextBox(emailAddress);
 
-		Assert.assertTrue(isElementDisplayed(driver, "//a[@class='ico-account']"));
+		System.out.println("Login_05_Valid_Email_Incorrect_Password - Step 3: Click Login Button");
+		loginPage.clickToLoginButton();
+
+		System.out.println(
+				"Login_05_Valid_Email_Incorrect_Password - Step 4: Verify login unsuccesful email message displayed");
+		Assert.assertEquals(loginPage.getLoginUnsuccessfulMessage(),
+				"Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
+
+	}
+
+	@Test
+	public void Login_06_Valid_Email_Correct_Password() {
+		System.out.println("Login_06_Valid_Email_Correct_Password - Step 1: Click to Login Link");
+		homePage.clickToLoginLink();
+
+		System.out.println("Login_06_Valid_Email_Correct_Password - Step 2: Input valid email/empty password");
+		loginPage.inputToEmailTextBox(User_01_Register.EMAIL_ADDRESS);
+		loginPage.inputToPasswordTextBox(password);
+
+		System.out.println("Login_06_Valid_Email_Correct_Password - Step 3: Click Login Button");
+		loginPage.clickToLoginButton();
+
+		System.out.println("Login_06_Valid_Email_Correct_Password - Step 4: Verify My account link displayed");
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+
 	}
 
 	@AfterClass
 	public void afterClass() {
+		driver.quit();
 	}
 
-	public int getRandomNumber() {
+	public static int getRandomNumber() {
 		Random rand = new Random();
 		return rand.nextInt(99999);
 

@@ -15,18 +15,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.NewsPageObject;
+import pageObjects.OrderPageObject;
 import pageObjects.PageGeneratorManager;
 import pageObjects.SearchPageObject;
 import pageUIs.BasePageUI;
 
 public class BasePage {
 	WebDriver driver;
-	
+
 	public static BasePage getBasePageObject() {
 		return new BasePage();
 	}
-	
+
 	public void openPageURL(WebDriver driver, String pageURL) {
 		driver.get(pageURL);
 
@@ -134,8 +134,16 @@ public class BasePage {
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 
+	public String getDynamicLocator(String xpathLocator, String... params) {
+		return String.format(xpathLocator, (Object[]) params);
+	}
+
 	public void clickToElement(WebDriver driver, String xpathLocator) {
 		getWebElement(driver, xpathLocator).click();
+	}
+
+	public void clickToElement(WebDriver driver, String xpathLocator, String... params) {
+		getWebElement(driver, getDynamicLocator(xpathLocator, params)).click();
 	}
 
 	public void sendkeyToElement(WebDriver driver, String xpathLocator, String textValue) {
@@ -144,8 +152,10 @@ public class BasePage {
 		element.sendKeys(textValue);
 	}
 
-	public String getTextToElement(WebDriver driver, String xpathLocator) {
-		return getWebElement(driver, xpathLocator).getText();
+	public void sendkeyToElement(WebDriver driver, String xpathLocator, String textValue, String... params) {
+		xpathLocator = getDynamicLocator(xpathLocator, params);
+		getWebElement(driver, xpathLocator).clear();
+		getWebElement(driver, xpathLocator).sendKeys(textValue);
 	}
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
@@ -191,6 +201,10 @@ public class BasePage {
 		return getWebElement(driver, xpathLocator).getText();
 	}
 
+	public String getElementText(WebDriver driver, String xpathLocator, String... params) {
+		return getWebElement(driver, getDynamicLocator(xpathLocator, params)).getText();
+	}
+
 	public void getElementCSS(WebDriver driver, String xpathLocator) {
 		Color.fromString(xpathLocator).asHex();
 	}
@@ -219,6 +233,10 @@ public class BasePage {
 
 	public boolean isElementDisplayed(WebDriver driver, String xpathLocator) {
 		return getWebElement(driver, xpathLocator).isDisplayed();
+	}
+
+	public boolean isElementDisplayed(WebDriver driver, String xpathLocator, String... params) {
+		return getWebElement(driver, getDynamicLocator(xpathLocator, params)).isDisplayed();
 	}
 
 	public boolean isElementEnabled(WebDriver driver, String xpathLocator) {
@@ -320,9 +338,21 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xpathLocator)));
 	}
 
+	public void waitForElementVisible(WebDriver driver, String xpathLocator, String... params) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
+		explicitWait.until(
+				ExpectedConditions.visibilityOfElementLocated(getByXpath(getDynamicLocator(xpathLocator, params))));
+	}
+
 	public void waitForAllElementVisible(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xpathLocator)));
+	}
+
+	public void waitForAllElementVisible(WebDriver driver, String xpathLocator, String... params) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
+		explicitWait.until(ExpectedConditions
+				.visibilityOfAllElementsLocatedBy(getByXpath(getDynamicLocator(xpathLocator, params))));
 	}
 
 	public void waitForElementInvisible(WebDriver driver, String xpathLocator) {
@@ -330,9 +360,21 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathLocator)));
 	}
 
+	public void waitForElementInvisible(WebDriver driver, String xpathLocator, String... params) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
+		explicitWait.until(
+				ExpectedConditions.invisibilityOfElementLocated(getByXpath(getDynamicLocator(xpathLocator, params))));
+	}
+
 	public void waitForAllElementInvisible(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(driver, xpathLocator)));
+	}
+
+	public void waitForAllElementInvisible(WebDriver driver, String xpathLocator, String... params) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
+		explicitWait.until(ExpectedConditions
+				.invisibilityOfAllElements(getListWebElement(driver, getDynamicLocator(xpathLocator, params))));
 	}
 
 	public void waitForElementClickable(WebDriver driver, String xpathLocator) {
@@ -340,30 +382,38 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
 	}
 
+	public void waitForElementClickable(WebDriver driver, String xpathLocator, String... params) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
+		explicitWait
+				.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(xpathLocator, params))));
+	}
+
 	public void waitForElementPrecense(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xpathLocator)));
 	}
-	
+
 	// Open Page
-	
-	public SearchPageObject openSearchPage(WebDriver driver) {
+
+	public SearchPageObject getSearchPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.SEARCH_PAGE_LINK_FOOTER);
 		clickToElement(driver, BasePageUI.SEARCH_PAGE_LINK_FOOTER);
 		return PageGeneratorManager.getSearchPage(driver);
 
 	}
-	
-	public NewsPageObject openNewsPage(WebDriver driver) {
+
+	public OrderPageObject getNewsPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.NEWS_PAGE_LINK_FOOTER);
 		clickToElement(driver, BasePageUI.NEWS_PAGE_LINK_FOOTER);
 		return PageGeneratorManager.getOrderPage(driver);
 
 	}
-	
 
-	
-	
+	public void getfooterPageByName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_PAGE_LINK_FOOTER, pageName);
+		clickToElement(driver, BasePageUI.DYNAMIC_PAGE_LINK_FOOTER, pageName);
+
+	}
 
 	private long LongTimeout = 30;
 
