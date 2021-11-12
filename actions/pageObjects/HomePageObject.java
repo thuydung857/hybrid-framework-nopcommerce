@@ -29,5 +29,7 @@ public class HomePageObject extends BasePage {
 		isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 		return true;
 	}
+	
+
 
 }

@@ -15,6 +15,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.NewsPageObject;
+import pageObjects.PageGeneratorManager;
+import pageObjects.SearchPageObject;
+import pageUIs.BasePageUI;
+
 public class BasePage {
 	WebDriver driver;
 	
@@ -339,6 +344,26 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, LongTimeout);
 		explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xpathLocator)));
 	}
+	
+	// Open Page
+	
+	public SearchPageObject openSearchPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.SEARCH_PAGE_LINK_FOOTER);
+		clickToElement(driver, BasePageUI.SEARCH_PAGE_LINK_FOOTER);
+		return PageGeneratorManager.getSearchPage(driver);
+
+	}
+	
+	public NewsPageObject openNewsPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.NEWS_PAGE_LINK_FOOTER);
+		clickToElement(driver, BasePageUI.NEWS_PAGE_LINK_FOOTER);
+		return PageGeneratorManager.getOrderPage(driver);
+
+	}
+	
+
+	
+	
 
 	private long LongTimeout = 30;
 
