@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="JQuery">
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.jquery.datatable.Level_09_Data_Table" />
+
+		</classes>
+	</test>
+
+</suite> 
+

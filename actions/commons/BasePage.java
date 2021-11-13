@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,13 +16,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.OrderPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.SearchPageObject;
-import pageUIs.BasePageUI;
+import pageObjects.nopCommerce.OrderPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.SearchPageObject;
+import pageUIs.nopCommerce.BasePageUI;
 
 public class BasePage {
 	WebDriver driver;
+	Actions action;
 
 	public static BasePage getBasePageObject() {
 		return new BasePage();
@@ -85,7 +87,18 @@ public class BasePage {
 
 	public void sendkeyToAlert(WebDriver driver, String textValue) {
 		waitAlertPrecense(driver).sendKeys(textValue);
-
+		
+	}
+	
+	public void pressKeyToElement(WebDriver driver, String xpathLocator, Keys key) {
+		action = new Actions(driver);
+		action.sendKeys(getWebElement(driver, xpathLocator), key).perform();
+	}
+	
+	public void pressKeyToElement(WebDriver driver, String xpathLocator, Keys key, String...params) {
+		action = new Actions(driver);
+		xpathLocator = getDynamicLocator(xpathLocator, params);
+		action.sendKeys(getWebElement(driver, xpathLocator), key).perform();
 	}
 
 	public void selectWindowByID(WebDriver driver, String expectedPageID) {
@@ -214,6 +227,11 @@ public class BasePage {
 	}
 
 	public int getElementSize(WebDriver driver, String xpathLocator) {
+		return getListWebElement(driver, xpathLocator).size();
+	}
+	
+	public int getElementSize(WebDriver driver, String xpathLocator, String...params) {
+		xpathLocator = getDynamicLocator(xpathLocator, params);
 		return getListWebElement(driver, xpathLocator).size();
 	}
 

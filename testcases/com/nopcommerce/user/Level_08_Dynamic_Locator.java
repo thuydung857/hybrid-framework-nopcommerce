@@ -12,12 +12,12 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.MyAccountPageObject;
-import pageObjects.OrderPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
-import pageObjects.SearchPageObject;
+import pageObjects.nopCommerce.HomePageObject;
+import pageObjects.nopCommerce.MyAccountPageObject;
+import pageObjects.nopCommerce.OrderPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.SearchPageObject;
 
 //Switch page = ham GET o trong BasePage (1 ham, 1 localtor, nhung de xai thi 2 dong - TC2)
 public class Level_08_Dynamic_Locator extends BaseTest {

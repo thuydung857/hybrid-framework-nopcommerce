@@ -12,11 +12,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.OrderPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
-import pageObjects.SearchPageObject;
+import pageObjects.nopCommerce.HomePageObject;
+import pageObjects.nopCommerce.OrderPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.SearchPageObject;
 
 // Switch page = ham GET o trong BasePage (10 page = 10 ham)
 public class Level_07_Switch_Page extends BaseTest {
