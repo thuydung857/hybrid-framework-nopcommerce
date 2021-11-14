@@ -2,9 +2,13 @@
 <suite name="JQuery">
 
 	<test name="Run on Chrome">
+	
+	<listener>
+	<listener class-name = "commons.MethodListener" />
+	</listener>
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.facebook.register.Level_11_Element_Undisplayed" />
+			<class name="com.facebook.register.Level_12_Assert_Verify" />
 
 		</classes>
 	</test>
