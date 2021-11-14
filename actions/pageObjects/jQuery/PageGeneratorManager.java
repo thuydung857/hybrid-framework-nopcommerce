@@ -8,6 +8,11 @@ public class PageGeneratorManager { // Dung để tối ưu việc khởi tạo 
 		return new HomePageObject(driver);
 
 	}
+	
+	public static UploadPageObject getUploadPage(WebDriver driver) {
+		return new UploadPageObject(driver);
+
+	}
 
 	
 

@@ -1,5 +1,7 @@
 package commons;
 
+import java.io.File;
+import java.nio.file.FileSystems;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -144,7 +146,7 @@ public class BasePage {
 		return driver.findElement(getByXpath(xpathLocator));
 	}
 
-	private List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
+	public List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 
@@ -452,6 +454,26 @@ public class BasePage {
 		waitForElementClickable(driver, BasePageUI.DYNAMIC_PAGE_LINK_FOOTER, pageName);
 		clickToElement(driver, BasePageUI.DYNAMIC_PAGE_LINK_FOOTER, pageName);
 
+	}
+
+	public String getDirectorySlash(WebDriver driver, String folderName) {
+		String separator = System.getProperty("file.separator");
+		System.out.println(separator);
+		separator = FileSystems.getDefault().getSeparator();
+		System.out.println(separator);
+		separator = File.separator;
+		System.out.println(separator);
+		return separator + folderName + separator;
+	}
+
+	public void uploadMultileFiles(WebDriver driver, String xpathLocator, String... fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FOLDER_PATH;
+		String fullFileName = "";
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		sendkeyToElement(driver, xpathLocator, fullFileName);
 	}
 
 	private long longTimeOut = 30;

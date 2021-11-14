@@ -15,11 +15,13 @@ public class Topic_13_File_Separator {
 		String hanoiFileNamePath = projectLocation + getDirectorySlash("uploadFiles") + hanoiFileName;
 		String saigonFileNamePath = projectLocation + getDirectorySlash("uploadFiles") + saigonFileName;
 
-		System.out.println(danangFileNamePath);
-		System.out.println(hanoiFileNamePath);
-		System.out.println(saigonFileNamePath);
+		// Final Path
+		System.out.println("DN Path " + danangFileNamePath);
+		System.out.println("HN Path " + hanoiFileNamePath);
+		System.out.println("SG Path " + saigonFileNamePath);
 	}
 
+	//Methor
 	public static String getDirectorySlash(String folderName) {
 		String separator = System.getProperty("file.separator");
 		System.out.println(separator);
