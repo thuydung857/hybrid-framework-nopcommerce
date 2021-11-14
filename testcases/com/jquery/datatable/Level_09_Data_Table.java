@@ -81,7 +81,7 @@ public class Level_09_Data_Table extends BaseTest {
 	}
 
 	@Test
-	public void Table_06_Click_Button_At_Row() {
+	public void Table_06_Click_Button_By_Row_Index() {
 		homePage.clickToActionButtonAtRowByRowIndex("3", "Insert Row Above");
 
 		homePage.clickToActionButtonAtRowByRowIndex("1", "Move Down");
