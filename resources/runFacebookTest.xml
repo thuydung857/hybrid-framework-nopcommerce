@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="JQuery">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="FB">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+	</listeners>
+
 
 	<test name="Run on Chrome">
-	
-	<listener>
-	<listener class-name = "commons.MethodListener" />
-	</listener>
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.facebook.register.Level_12_Assert_Verify" />
@@ -14,4 +17,5 @@
 	</test>
 
 </suite> 
+
 

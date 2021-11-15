@@ -10,7 +10,6 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.internal.Utils;
 
-
 public class MethodListener implements IInvokedMethodListener {
 	@Override
 	public void beforeInvocation(IInvokedMethod method, ITestResult result) {

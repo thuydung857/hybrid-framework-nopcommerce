@@ -23,6 +23,7 @@ public class BaseTest {
 		log = LogFactory.getLog(getClass());
 	}
 
+	
 	protected WebDriver openMultiBrowsers(String browserName) {
 		if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

@@ -3,11 +3,10 @@ package com.facebook.register;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -17,11 +16,8 @@ import pageObjects.facebook.RegisterPageObject;
 public class Level_12_Assert_Verify extends BaseTest {
 
 	private WebDriver driver;
-	Select select;
-	Actions action;
 	String emailAddress;
 	private RegisterPageObject registerPage;
-
 	String projectPath = System.getProperty("user.dir");
 
 	@Parameters("browser")
@@ -40,7 +36,6 @@ public class Level_12_Assert_Verify extends BaseTest {
 
 	}
 
-	@Test
 	public void Register_02_Verify() {
 		registerPage.inputToEmailTextBox("");
 		verifyFalse(registerPage.isConfirmEmailTextboxDisplayed());
