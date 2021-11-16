@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -36,6 +35,7 @@ public class Level_12_Assert_Verify extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_02_Verify() {
 		registerPage.inputToEmailTextBox("");
 		verifyFalse(registerPage.isConfirmEmailTextboxDisplayed());

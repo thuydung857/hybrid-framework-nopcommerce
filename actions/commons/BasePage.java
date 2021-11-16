@@ -95,7 +95,7 @@ public class BasePage {
 
 	public void pressKeyToElement(WebDriver driver, String xpathLocator, Keys key) {
 		action = new Actions(driver);
-		action.sendKeys(getWebElement(driver, xpathLocator), key).perform();
+		action.sendKeys(key).perform();
 	}
 
 	public void pressKeyToElement(WebDriver driver, String xpathLocator, Keys key, String... params) {
