@@ -94,3 +94,159 @@
 [INFO ] [2021-11-16 13:50:47,453]  -------------------------- FAILED -------------------------- 
 [INFO ] [2021-11-16 13:50:47,453] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
 [INFO ] [2021-11-16 13:50:47,475]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:26:35,373] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 22:26:36,987] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:26:37,139] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:26:37,252] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 22:26:37,388] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:26:37,541] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:26:37,683] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 22:26:37,813] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 22:26:37,953] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 22:26:39,020] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 22:26:39,080] Login_02_Valid_Email_Correct_Password - Step 4: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,114]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,114] Login_02_Valid_Email_Correct_Password - Step 5: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,140]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,141] Login_02_Valid_Email_Correct_Password - Step 6: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,162]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,162] Login_02_Valid_Email_Correct_Password - Step 7: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,185]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,185] Login_02_Valid_Email_Correct_Password - Step 8: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,209]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,209] Login_02_Valid_Email_Correct_Password - Step 9: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,232]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:26:39,232] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
+[INFO ] [2021-11-21 22:26:39,255]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:33:53,655] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 22:33:55,276] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:33:55,403] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:33:55,492] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 22:33:55,614] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:33:55,741] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:33:55,878] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 22:33:55,998] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 22:33:56,115] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 22:33:57,660] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 22:33:57,719] Login_02_Valid_Email_Correct_Password - Step 4: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,746]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,746] Login_02_Valid_Email_Correct_Password - Step 5: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,766]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,766] Login_02_Valid_Email_Correct_Password - Step 6: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,785]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,785] Login_02_Valid_Email_Correct_Password - Step 7: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,806]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,806] Login_02_Valid_Email_Correct_Password - Step 8: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,827]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,827] Login_02_Valid_Email_Correct_Password - Step 9: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,847]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:33:57,847] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
+[INFO ] [2021-11-21 22:33:57,867]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:45:23,509] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 22:45:25,139] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:45:25,303] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:45:25,416] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 22:45:25,563] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:45:25,753] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:45:25,918] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 22:45:26,057] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 22:45:26,206] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 22:45:28,630] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 22:45:28,747] Login_02_Valid_Email_Correct_Password - Step 4: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,782]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,782] Login_02_Valid_Email_Correct_Password - Step 5: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,814]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,814] Login_02_Valid_Email_Correct_Password - Step 6: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,848]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,848] Login_02_Valid_Email_Correct_Password - Step 7: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,868]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,868] Login_02_Valid_Email_Correct_Password - Step 8: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,890]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,890] Login_02_Valid_Email_Correct_Password - Step 9: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,910]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:45:28,910] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
+[INFO ] [2021-11-21 22:45:28,932]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:46:59,162] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 22:46:59,880] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:47:00,016] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:47:00,112] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 22:47:00,246] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:47:00,377] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:47:00,498] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 22:47:00,617] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 22:47:00,735] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 22:47:03,689] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 22:47:03,778] Login_02_Valid_Email_Correct_Password - Step 4: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:03,822]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:03,822] Login_02_Valid_Email_Correct_Password - Step 5: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:03,857]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:03,858] Login_02_Valid_Email_Correct_Password - Step 6: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:03,901]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:03,901] Login_02_Valid_Email_Correct_Password - Step 7: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:03,938]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:03,938] Login_02_Valid_Email_Correct_Password - Step 8: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:03,975]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:03,975] Login_02_Valid_Email_Correct_Password - Step 9: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:04,012]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:04,013] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:04,051]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:30,620] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 22:47:32,182] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:47:32,324] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 22:47:32,422] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 22:47:32,553] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:47:32,689] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 22:47:32,862] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 22:47:33,014] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 22:47:33,148] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 22:47:35,493] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 22:47:35,568] Login_02_Valid_Email_Correct_Password - Step 4: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,600]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,601] Login_02_Valid_Email_Correct_Password - Step 5: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,621]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,622] Login_02_Valid_Email_Correct_Password - Step 6: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,642]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,642] Login_02_Valid_Email_Correct_Password - Step 7: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,665]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,665] Login_02_Valid_Email_Correct_Password - Step 8: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,685]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,686] Login_02_Valid_Email_Correct_Password - Step 9: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,708]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-21 22:47:35,708] Login_02_Valid_Email_Correct_Password - Step 10: Verify My account link displayed
+[INFO ] [2021-11-21 22:47:35,728]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-21 23:28:30,307] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 23:28:31,896] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:28:32,045] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:28:32,137] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 23:28:32,267] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:28:32,393] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:28:32,524] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 23:28:32,641] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 23:28:32,751] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 23:30:37,353] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 23:30:38,984] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:30:39,124] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:30:39,230] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 23:30:39,359] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:30:39,494] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:30:39,630] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 23:30:39,754] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 23:30:39,879] Login_01_Valid_Info - Step 7: Click to Register Button
+[INFO ] [2021-11-21 23:30:39,996] Login_01_Valid_Info - Step 8: Verify register successful message displayed
+[INFO ] [2021-11-21 23:34:56,943] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 23:34:58,513] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:34:58,647] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:34:58,737] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 23:34:58,860] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:34:58,991] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:34:59,114] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 23:34:59,234] Login_01_Valid_Info - Step 6: Input to required fields
+[INFO ] [2021-11-21 23:37:34,179] Login_01_Valid_Info - Step 1: Click to Register Link
+[INFO ] [2021-11-21 23:37:35,865] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:37:35,992] Login_01_Valid_Info - Step 2: Input to required fields
+[INFO ] [2021-11-21 23:37:36,085] Login_01_Valid_Info - Step 3: Input to required fields
+[INFO ] [2021-11-21 23:37:36,208] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:37:36,346] Login_01_Valid_Info - Step 4: Input to required fields
+[INFO ] [2021-11-21 23:37:36,455] Login_01_Valid_Info - Step 5: Input to required fields
+[INFO ] [2021-11-21 23:39:26,670] OS name = windows 10
+[INFO ] [2021-11-21 23:39:26,671] Driver instance name = windows 10

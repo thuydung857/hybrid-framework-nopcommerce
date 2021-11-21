@@ -41,6 +41,7 @@ public class Level_13_Register_Login_Log_Report extends BaseTest {
 		password = "123456";
 		company = "Automation";
 
+		Assert.assertTrue(false);
 	}
 
 	@Test
@@ -102,9 +103,11 @@ public class Level_13_Register_Login_Log_Report extends BaseTest {
 
 	}
 
-	@AfterClass
+	@Parameters("browser")
+	@AfterClass (alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
+		closeBrowserAndDriver();
+		
 	}
 
 	public static int getRandomNumber() {
