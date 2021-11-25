@@ -1,4 +1,4 @@
-package com.nopcommerce.user;
+package com.nopcommerce.pom;
 
 import java.util.Random;
 
@@ -34,11 +34,6 @@ public class Level_14_Login_Share_State extends BaseTest {
 		driver.get("https://demo.nopcommerce.com/");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 		homePage = PageGeneratorManager.getHomePage(driver);
-
-		firstName = "Dung";
-		lastName = "Nguyen";
-		password = "123456";
-		company = "Automation";
 
 		log.info("Precondition - Step 1: Click to Login link");
 		homePage.clickToLoginLink();

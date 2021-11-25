@@ -6,19 +6,14 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
-			<listener
-			class-name="commons.MethodListener" />
-			<listener
-			class-name="reportConfig.ReportNGListener" />
+		<listener class-name="commons.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
 	</listeners>
 
 	<test name="Run on Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class
-				name="com.nopcommerce.commons.Common_01_login" />
-			<class
-				name="com.nopcommerce.user.Level_14_Login_Share_State" />
+			<class name="com.nopcommerce.pom.Level_15_Page_Object_Pattern" />
 		</classes>
 	</test>
 

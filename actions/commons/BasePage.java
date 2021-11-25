@@ -487,6 +487,26 @@ public class BasePage {
 		sendkeyToElement(driver, xpathLocator, fullFileName);
 	}
 
+	// Page Object Pattern
+
+	public void clickToLinkByText(WebDriver driver, String... params) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK_BY_TEXT, params);
+		clickToElement(driver, BasePageUI.DYNAMIC_LINK_BY_TEXT, params);
+		
+	}
+	
+	public void clickToButtonByText(WebDriver driver, String... params) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, params);
+		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, params);
+
+	}
+	
+
+	public void inputToTextBoxByID(WebDriver driver, String textValue, String... params) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, params);
+		sendkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textValue, params);
+	}
+
 	private long longTimeOut = 30;
 
 	private long shortTimeOut = 10;

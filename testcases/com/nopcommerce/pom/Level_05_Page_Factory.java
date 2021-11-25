@@ -1,4 +1,4 @@
-package com.nopcommerce.user;
+package com.nopcommerce.pom;
 
 import java.util.Random;
 
@@ -12,11 +12,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.PageGeneratorManager;
-import pageObjects.nopCommerce.RegisterPageObject;
+import pageFactory.nopCommerce.HomePageObject;
+import pageFactory.nopCommerce.RegisterPageObject;
 
-public class Level_06_Page_Generator_Manager extends BaseTest {
+
+public class Level_05_Page_Factory extends BaseTest {
 
 	private WebDriver driver;
 	Select select;
@@ -33,8 +33,8 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		driver = openMultiBrowsers(browserName);
 		action = new Actions(driver);
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = PageGeneratorManager.getHomePage(driver);
-		registerPage = PageGeneratorManager.getRegisterPage(driver);
+		homePage = new HomePageObject(driver);
+		registerPage = new RegisterPageObject(driver);
 
 		emailAddress = "auto" + getRandomNumber() + "@gmail.net";
 		firstName = "Dung";
@@ -83,7 +83,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		System.out.println("Register_03_Valid_Info - Step 2: Input to required fields");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_06_Page_Generator_Manager.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_05_Page_Factory.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -106,7 +106,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		System.out.println("Register_04_Existing_Email - Step 3: Input existing email");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_06_Page_Generator_Manager.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_05_Page_Factory.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -126,7 +126,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		System.out.println("Register_05_Password_Less_Than_6_Chars - Step 2: Input password less than 6 characters");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_06_Page_Generator_Manager.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_05_Page_Factory.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox("123");
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -144,7 +144,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		System.out.println("Register Page - Step 2: Input password diff confirm password");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_06_Page_Generator_Manager.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_05_Page_Factory.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(emailAddress);

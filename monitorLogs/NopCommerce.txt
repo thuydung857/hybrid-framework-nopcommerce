@@ -1,2 +1,0 @@
-[INFO ] [2021-11-21 23:39:26,670] OS name = windows 10
-[INFO ] [2021-11-21 23:39:26,671] Driver instance name = windows 10

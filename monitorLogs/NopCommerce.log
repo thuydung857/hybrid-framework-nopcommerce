@@ -250,3 +250,43 @@
 [INFO ] [2021-11-21 23:37:36,455] Login_01_Valid_Info - Step 5: Input to required fields
 [INFO ] [2021-11-21 23:39:26,670] OS name = windows 10
 [INFO ] [2021-11-21 23:39:26,671] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:07:31,035] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:07:31,061] OS name = windows 10
+[INFO ] [2021-11-25 22:07:31,062] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:08:23,336] OS name = windows 10
+[INFO ] [2021-11-25 22:08:23,337] 
+[INFO ] [2021-11-25 22:12:01,687] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:12:01,707] OS name = windows 10
+[INFO ] [2021-11-25 22:12:01,707] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:14:31,041] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:14:32,500] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:14:32,517] OS name = windows 10
+[INFO ] [2021-11-25 22:14:32,518] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:15:07,306] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:15:09,024] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:15:09,039] OS name = windows 10
+[INFO ] [2021-11-25 22:15:09,039] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:17:48,011] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:17:49,435] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:17:54,487] Precondition - Step 3: Verify My Account Link Displayed
+[INFO ] [2021-11-25 22:17:56,001]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-25 22:17:56,015] OS name = windows 10
+[INFO ] [2021-11-25 22:17:56,015] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:20:29,105] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:20:30,420] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:20:35,465] Precondition - Step 3: Verify My Account Link Displayed
+[INFO ] [2021-11-25 22:20:35,895]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-25 22:20:35,908] OS name = windows 10
+[INFO ] [2021-11-25 22:20:35,909] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:21:11,309] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:21:12,771] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:21:27,834] Precondition - Step 3: Verify My Account Link Displayed
+[INFO ] [2021-11-25 22:21:29,138]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-11-25 22:21:29,151] OS name = windows 10
+[INFO ] [2021-11-25 22:21:29,151] Driver instance name = windows 10
+[INFO ] [2021-11-25 22:23:24,094] Precondition - Step 1: Click to Login link
+[INFO ] [2021-11-25 22:23:25,854] Precondition - Step 2: Set all cookie
+[INFO ] [2021-11-25 22:23:38,900] Precondition - Step 3: Verify My Account Link Displayed
+[INFO ] [2021-11-25 22:23:38,930]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-11-25 22:23:38,943] OS name = windows 10
+[INFO ] [2021-11-25 22:23:38,943] Driver instance name = windows 10

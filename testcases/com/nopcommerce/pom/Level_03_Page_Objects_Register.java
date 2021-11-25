@@ -1,21 +1,21 @@
-package com.nopcommerce.user;
+package com.nopcommerce.pom;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.BaseTest;
 import pageObjects.nopCommerce.HomePageObject;
 import pageObjects.nopCommerce.RegisterPageObject;
 
-public class Level_04_Multiple_Browsers extends BaseTest {
+public class Level_03_Page_Objects_Register {
 
 	private WebDriver driver;
 	Select select;
@@ -26,11 +26,13 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 	String projectPath = System.getProperty("user.dir");
 	static String EMAIL_ADDRESS = "NopCom" + getRandomNumber() + "@mail.net";
 
-	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = openMultiBrowsers(browserName);
+	public void beforeClass() {
+		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+		driver = new ChromeDriver();
 		action = new Actions(driver);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
 		homePage = new HomePageObject(driver);
 		registerPage = new RegisterPageObject(driver);
@@ -60,6 +62,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_02_Invalid_Email() {
 		System.out.println("Register_02_Invalid_Email - Step 1: Click to Register Link");
 		homePage.clickToRegisterLink();
@@ -75,6 +78,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_03_Valid_Info() {
 		System.out.println("Register_03_Valid_Info - Step 1: Click to Register Link");
 		homePage.clickToRegisterLink();
@@ -82,7 +86,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 		System.out.println("Register_03_Valid_Info - Step 2: Input to required fields");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_04_Multiple_Browsers.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Register.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -95,6 +99,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_04_Existing_Email() {
 		System.out.println("Register_04_Existing_Email - Step 1: Click to Logout Link");
 		registerPage.clickToLogoutLink();
@@ -105,7 +110,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 		System.out.println("Register_04_Existing_Email - Step 3: Input existing email");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_04_Multiple_Browsers.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Register.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -118,6 +123,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_05_Password_Less_Than_6_Chars() {
 		System.out.println("Register_05_Password_Less_Than_6_Chars - Step 1: Click to Register Link");
 		homePage.clickToRegisterLink();
@@ -125,7 +131,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 		System.out.println("Register_05_Password_Less_Than_6_Chars - Step 2: Input password less than 6 characters");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_04_Multiple_Browsers.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Register.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox("123");
 		registerPage.inputToConfirmPasswordTextBox(password);
@@ -136,6 +142,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 
 	}
 
+	@Test
 	public void Register_06_Password_Different_Confirm_Password() {
 		System.out.println("Home Page - Step 1: Click to Register Link");
 		homePage.clickToRegisterLink();
@@ -143,7 +150,7 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 		System.out.println("Register Page - Step 2: Input password diff confirm password");
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
-		registerPage.inputToEmailTextBox(Level_04_Multiple_Browsers.EMAIL_ADDRESS);
+		registerPage.inputToEmailTextBox(Level_03_Page_Objects_Register.EMAIL_ADDRESS);
 		registerPage.inputToCompanyTextBox(company);
 		registerPage.inputToPasswordTextBox(password);
 		registerPage.inputToConfirmPasswordTextBox(emailAddress);
