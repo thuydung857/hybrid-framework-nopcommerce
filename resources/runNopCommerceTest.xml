@@ -16,7 +16,9 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.nopcommerce.user.Level_13_Register_Login_Log_Report" />
+				name="com.nopcommerce.commons.Common_01_login" />
+			<class
+				name="com.nopcommerce.user.Level_14_Login_Share_State" />
 		</classes>
 	</test>
 
