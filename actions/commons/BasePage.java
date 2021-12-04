@@ -23,6 +23,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.nopCommerce.OrderPageObject;
 import pageObjects.nopCommerce.PageGeneratorManager;
 import pageObjects.nopCommerce.SearchPageObject;
+import pageUIs.hrm.BasePageUI_HRM;
+import pageUIs.hrm.HomePageUI_HRM;
 import pageUIs.nopCommerce.BasePageUI;
 
 public class BasePage {
@@ -215,11 +217,11 @@ public class BasePage {
 	}
 
 	public String getElementText(WebDriver driver, String xpathLocator) {
-		return getWebElement(driver, xpathLocator).getText();
+		return getWebElement(driver, xpathLocator).getText().trim();
 	}
 
 	public String getElementText(WebDriver driver, String xpathLocator, String... params) {
-		return getWebElement(driver, getDynamicLocator(xpathLocator, params)).getText();
+		return getWebElement(driver, getDynamicLocator(xpathLocator, params)).getText().trim();
 	}
 
 	public void getElementCSS(WebDriver driver, String xpathLocator) {
@@ -295,6 +297,12 @@ public class BasePage {
 
 	public void hoverToElement(WebDriver driver, String xpathLocator) {
 		Actions action = new Actions(driver);
+		action.moveToElement(getWebElement(driver, xpathLocator)).perform();
+	}
+
+	public void hoverToElement(WebDriver driver, String xpathLocator, String... params) {
+		Actions action = new Actions(driver);
+		xpathLocator = getDynamicLocator(xpathLocator, params);
 		action.moveToElement(getWebElement(driver, xpathLocator)).perform();
 	}
 
@@ -445,6 +453,13 @@ public class BasePage {
 		}
 	}
 
+	public void uploadSingleFile(WebDriver driver, String xpathLocator, String fileName) {
+		waitForElementClickable(driver, xpathLocator);
+		fileName = GlobalConstants.UPLOAD_FOLDER_PATH + fileName;
+		sendkeyToElement(driver, xpathLocator, fileName);
+
+	}
+	
 	// Open Page
 
 	public SearchPageObject getSearchPage(WebDriver driver) {
@@ -492,21 +507,58 @@ public class BasePage {
 	public void clickToLinkByText(WebDriver driver, String... params) {
 		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK_BY_TEXT, params);
 		clickToElement(driver, BasePageUI.DYNAMIC_LINK_BY_TEXT, params);
-		
+
 	}
-	
+
 	public void clickToButtonByText(WebDriver driver, String... params) {
 		waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, params);
 		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, params);
 
 	}
-	
 
 	public void inputToTextBoxByID(WebDriver driver, String textValue, String... params) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, params);
+		waitForElementClickable(driver, BasePageUI_HRM.DYNAMIC_TEXTBOX_BY_ID, params);
 		sendkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textValue, params);
 	}
 
+	// HRM
+	public void inputToTextboxByID(WebDriver driver, String textValue, String... params) {
+		waitForElementClickable(driver, BasePageUI_HRM.DYNAMIC_TEXTBOX_BY_ID, params);
+		sendkeyToElement(driver, BasePageUI_HRM.DYNAMIC_TEXTBOX_BY_ID, textValue, params);
+	}
+
+	public void clickToButtonByValue(WebDriver driver, String... params) {
+		waitForElementClickable(driver, BasePageUI_HRM.DYNAMIC_BUTTON_BY_VALUE, params);
+		clickToElement(driver, BasePageUI_HRM.DYNAMIC_BUTTON_BY_VALUE, params);
+
+	}
+
+	public void hoverToParentMenu(WebDriver driver, String... params) {
+		waitForElementClickable(driver, HomePageUI_HRM.DYNAMIC_PARENT_MENU_BY_TEXT, params);
+		hoverToElement(driver, HomePageUI_HRM.DYNAMIC_PARENT_MENU_BY_TEXT, params);
+		
+	}
+	
+	public void hoverToSubMenu(WebDriver driver, String... params) {
+		waitForElementClickable(driver, HomePageUI_HRM.DYNAMIC_SUB_MENU_BY_TEXT, params);
+		hoverToElement(driver, HomePageUI_HRM.DYNAMIC_SUB_MENU_BY_TEXT, params);
+		
+	}
+	
+	public String getValueDisplayedAtColumnNameAndRowIndex(WebDriver driver, String tableID, String headerName, String rowIndex) {
+		int columnIndex = getElementSize(driver, BasePageUI_HRM.TABLE_HEADER_BY_ID_NAME, tableID, headerName) +1;
+		waitForElementClickable(driver, BasePageUI_HRM.TABLE_ROW_BY_COLUMN_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
+		return getElementText(driver, BasePageUI_HRM.TABLE_ROW_BY_COLUMN_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
+	}
+	
+	public void logoutToSystem(WebDriver driver, String welcomeLinkText, String logoutLinkText) {
+		waitForElementClickable(driver, BasePageUI_HRM.LINK_BY_TEXT, welcomeLinkText);
+		clickToElement(driver, BasePageUI_HRM.LINK_BY_TEXT, welcomeLinkText);
+		waitForElementClickable(driver, BasePageUI_HRM.LINK_BY_TEXT, logoutLinkText);
+		clickToElement(driver, BasePageUI_HRM.LINK_BY_TEXT, logoutLinkText);		
+	}
+
+	
 	private long longTimeOut = 30;
 
 	private long shortTimeOut = 10;
