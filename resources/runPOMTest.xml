@@ -13,7 +13,7 @@
 	<test name="Run on Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.nopcommerce.pom.Level_18_Sort" />
+			<class name="com.nopcommerce.pom.Level_20_Test_Data" />
 		</classes>
 	</test>
 
